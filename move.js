@@ -70,7 +70,7 @@ function move (from, to, opts) {
     return rimrafAsync(target, opts)
   }
 
-  function rename (from, to, opts, done) {
+  function rename (from, to, opts) {
     return renameAsync(from, to).catch(function (err) {
       if (err.code !== 'EXDEV') {
         return Promise.reject(err)

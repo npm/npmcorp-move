@@ -12,10 +12,8 @@
   "author": "Rebecca Turner <me@re-becca.org> (http://re-becca.org/)",
   "license": "ISC",
   "dependencies": {
-    "copy-concurrently": "^1.0.0",
     "aproba": "^1.1.1",
-    "fs-write-stream-atomic": "^1.0.8",
-    "mkdirp": "^0.5.1",
+    "copy-concurrently": "^1.0.0",
     "rimraf": "^2.5.4",
     "run-queue": "^1.0.3"
   },
@@ -25,8 +23,7 @@
     "tap": "^10.1.1"
   },
   "files": [
-    "move.js",
-    "is-windows.js"
+    "move.js"
   ],
   "directories": {
     "test": "test"
