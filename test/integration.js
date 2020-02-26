@@ -27,11 +27,11 @@ var fixture = new Tacks(Dir({
       'file2.json': File(testContent)
     }),
     subdir2: Dir({
-      'linky': Symlink(path.join('..', 'subdir')),
+      linky: Symlink(path.join('..', 'subdir')),
       'file2.json': File(testContent),
       subsub: Dir({
-        'aaaa': Symlink('bbbb'),
-        'bbbb': Dir(),
+        aaaa: Symlink('bbbb'),
+        bbbb: Dir(),
         'zzzz.json': File(testContent)
       })
     })
@@ -39,7 +39,7 @@ var fixture = new Tacks(Dir({
   'test-dir-symlink': Symlink('test-dir'),
   'test-file.json': File(testContent),
   'test-symlink.json': Symlink('test-file.json'),
-  'existing': File('')
+  existing: File('')
 }))
 
 function readFile (file) {

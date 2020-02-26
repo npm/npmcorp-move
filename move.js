@@ -6,7 +6,6 @@ var rimraf = require('rimraf')
 var validate = require('aproba')
 var copy = require('copy-concurrently')
 var RunQueue = require('run-queue')
-var extend = Object.assign || require('util')._extend
 
 function promisify (Promise, fn) {
   return function () {
@@ -25,7 +24,7 @@ function promisify (Promise, fn) {
 
 function move (from, to, opts) {
   validate('SSO|SS', arguments)
-  opts = extend({}, opts || {})
+  opts = Object.assign({}, opts || {})
 
   var Promise = opts.Promise || global.Promise
   var fs = opts.fs || nodeFs
