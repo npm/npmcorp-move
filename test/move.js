@@ -4,13 +4,11 @@ var stream = require('stream')
 var test = require('tap').test
 var validate = require('aproba')
 
-var extend = Object.assign || require('util')._extend
-
 function assign () {
   var args = [].slice.call(arguments)
   var base = args.shift()
   while (args.length) {
-    base = extend(base, args.shift())
+    base = Object.assign(base, args.shift())
   }
   return base
 }
@@ -47,7 +45,7 @@ var isNothing = {
   isFIFO: function () { return false },
   isSocket: function () { return false }
 }
-var fileExists = assign({}, isNothing, {isFile: function () { return true }})
+var fileExists = assign({}, isNothing, { isFile: function () { return true } })
 
 function nextTick (fn) {
   var args = [].slice.call(arguments, 1)
